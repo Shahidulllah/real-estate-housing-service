@@ -1,4 +1,4 @@
-import { FaFacebook, FaGithub, FaGoogle } from "react-icons/fa";
+import { FaGithub, FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 
@@ -6,7 +6,7 @@ const Register = () => {
     return (
         <div>
       <div className="min-h-screen bg-base-200 mb-3 mt-7 flex flex-col justify-center items-center rounded-2xl w-full">
-        <div className="w-6/12 p-12">
+        <div className="w-full lg:w-6/12 p-5 lg:p-12">
           <div className="shadow-2xl p-7 bg-base-100 rounded-xl">
             <h1 className="text-center text-2xl font-bold">Register Your Account</h1>
             <form>

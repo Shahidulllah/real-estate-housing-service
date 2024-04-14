@@ -6,7 +6,6 @@ const Root = () => {
         <div className='p-4 lg:mx-24'>
             <Navbar></Navbar>
             <Outlet></Outlet>
-    
         </div>
     );
 };

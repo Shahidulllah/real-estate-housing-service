@@ -1,4 +1,5 @@
-import Slider from "../../Firebase/Slider";
+import Slider from "../Slider/Slider";
+
 
 
 const Home = () => {

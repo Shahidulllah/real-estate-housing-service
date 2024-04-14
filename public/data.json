@@ -1,0 +1,112 @@
+[
+      {
+        "id": 1,
+        "estate_title": "Modern Family Home",
+        "segment_name": "Residential",
+        "description": "Spacious and contemporary family home with stunning views",
+        "price": "$500,000",
+        "status": "sale",
+        "area": "2500 sq ft",
+        "location": "Suburban neighborhood, City X",
+        "facilities": ["4 bedrooms", "2 bathrooms", "Garden", "Garage"],
+        "image": "https://i.ibb.co/F3pSXTt/modern-family-house.webp"
+      },
+      {
+        "id": 2,
+        "estate_title": "Luxury Apartment",
+        "segment_name": "Residential",
+        "description": "Elegant apartment with high-end finishes and panoramic city views",
+        "price": "$2,500/month",
+        "status": "rent",
+        "area": "1200 sq ft",
+        "location": "Downtown, City Y",
+        "facilities": ["2 bedrooms", "2 bathrooms", "Swimming pool", "Gym"],
+        "image": "https://i.ibb.co/CmVzn2d/Luxury-apartment.jpg"
+      },
+      {
+        "id": 3,
+        "estate_title": "Cozy Cottage",
+        "segment_name": "Residential",
+        "description": "Charming cottage nestled in a quiet countryside setting",
+        "price": "$300,000",
+        "status": "sale",
+        "area": "1500 sq ft",
+        "location": "Rural area, Town Z",
+        "facilities": ["2 bedrooms", "1 bathroom", "Fireplace", "Garden"],
+        "image": "https://i.ibb.co/nzWmHRT/Cozy-cottage.jpg"
+      },
+      {
+        "id": 4,
+        "estate_title": "Family Villa",
+        "segment_name": "Residential",
+        "description": "Spacious villa with a private pool and landscaped gardens",
+        "price": "$1,200,000",
+        "status": "sale",
+        "area": "4000 sq ft",
+        "location": "Exclusive neighborhood, City W",
+        "facilities": ["5 bedrooms", "4 bathrooms", "Private pool", "Home theater"],
+        "image": "https://i.ibb.co/d5Ry5Qr/Family-villa.webp"
+      },
+      {
+        "id": 5,
+        "estate_title": "Urban Loft",
+        "segment_name": "Residential",
+        "description": "Chic loft apartment in the heart of the city with modern amenities",
+        "price": "$800,000",
+        "status": "sale",
+        "area": "1800 sq ft",
+        "location": "City Center, City X",
+        "facilities": ["Open-plan layout", "High ceilings", "Balcony", "Fitness center"],
+        "image": "https://i.ibb.co/s6FG7DZ/Urban-Loft.jpg"
+      },
+      {
+        "id": 6,
+        "estate_title": "Lakefront Retreat",
+        "segment_name": "Residential",
+        "description": "Tranquil retreat overlooking a picturesque lake, perfect for relaxation",
+        "price": "$700,000",
+        "status": "sale",
+        "area": "2200 sq ft",
+        "location": "Lakefront, Town A",
+        "facilities": ["3 bedrooms", "2 bathrooms", "Deck", "Boat dock"],
+        "image": "https://i.ibb.co/xsv6QWn/Lake-Front.webp"
+      },
+      {
+        "id": 7,
+        "estate_title": "Mountain Cabin",
+        "segment_name": "Residential",
+        "description": "Cozy cabin nestled in the mountains surrounded by nature's beauty",
+        "price": "$400,000",
+        "status": "sale",
+        "area": "1300 sq ft",
+        "location": "Mountain range, Town B",
+        "facilities": ["2 bedrooms", "1 bathroom", "Wood-burning stove", "Hiking trails"],
+        "image": "https://i.ibb.co/ByJ2d0N/Mountain-Cabin.jpg"
+      },
+      {
+        "id": 8,
+        "estate_title": "Beachside Bungalow",
+        "segment_name": "Residential",
+        "description": "Quaint bungalow just steps away from the sandy beach and ocean waves",
+        "price": "$600,000",
+        "status": "sale",
+        "area": "1600 sq ft",
+        "location": "Beachfront, Town C",
+        "facilities": ["1 bedroom", "1 bathroom", "Sunroom", "Outdoor shower"],
+        "image": "https://i.ibb.co/f0cvgyn/bungalow.jpg"
+      },
+      {
+        "id": 9,
+        "estate_title": "Country Estate",
+        "segment_name": "Residential",
+        "description": "Grand estate surrounded by rolling hills and vast landscapes",
+        "price": "$3,000,000",
+        "status": "sale",
+        "area": "6000 sq ft",
+        "location": "Countryside, City D",
+        "facilities": ["6 bedrooms", "5 bathrooms", "Swimming pool", "Tennis court"],
+        "image": "https://i.ibb.co/3MD9bpg/country.webp"
+      }
+    ]
+  
+  

@@ -1,39 +1,52 @@
-
+import { FaFacebook, FaGithub, FaGoogle } from "react-icons/fa";
+import { Link } from "react-router-dom";
 const Login = () => {
-    return (
-        <div>
-            <div className="hero min-h-screen bg-base-200">
-  <div className="hero-content flex-col lg:flex-row-reverse">
-    <div className="text-center lg:hidden lg:text-left">
-      <h1 className="text-5xl font-bold">Login now!</h1>
-      <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+  return (
+     <div>
+      <div className="min-h-screen bg-base-200 mb-3 mt-7 flex flex-col justify-center items-center rounded-2xl w-full">
+        <div className="w-6/12 p-12">
+          <div className="shadow-2xl bg-base-100 p-7 rounded-xl">
+          <h1 className="text-center text-2xl font-bold">Please Login</h1>
+
+            <form className="card-body">
+              <div className="form-control">
+                <label className="label ">
+                  <span>Email</span>
+                </label>
+                <input type="email" placeholder="Enter Your Email" className="input input-bordered" required />
+              </div>
+              <div className="form-control">
+                <label className="label">
+                  <span>Password</span>
+                </label>
+                <input type="password" placeholder="Type Your Password" className="input input-bordered" required />
+                <label className="label">
+                  <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+                </label>
+              </div>
+              <div className="form-control mt-6">
+                <button className="btn btn-primary font-bold">Login</button>
+              </div>
+
+              {/* Other Option to log in */}
+              <div className="mt-8 text-center">
+                <hr />
+                <p>Or,</p>
+                <hr />
+                {/* google, github */}
+                <div>
+                  <h1 className="mb-4">Login with</h1>
+                  <button className="btn mr-7"><FaGoogle></FaGoogle> Google</button>
+                  <button className="btn"><FaGithub></FaGithub> GitHub</button>
+                </div>
+              </div>
+              <p className="mt-7 text-center">Not a member? Please <Link to='/register' className="text-blue-600 font-bold">Register.</Link></p>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
-    <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-      <form className="card-body">
-        <div className="form-control">
-          <label className="label">
-            <span className="label-text">Email</span>
-          </label>
-          <input type="email" placeholder="email" className="input input-bordered" required />
-        </div>
-        <div className="form-control">
-          <label className="label">
-            <span className="label-text">Password</span>
-          </label>
-          <input type="password" placeholder="password" className="input input-bordered" required />
-          <label className="label">
-            <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-          </label>
-        </div>
-        <div className="form-control mt-6">
-          <button className="btn btn-primary">Login</button>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
-        </div>
-    );
+  );
 };
 
 export default Login;

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 
 const Card = () => {
@@ -7,7 +8,6 @@ const Card = () => {
         fetch('data.json')
             .then(res => res.json())
             .then(data => {
-                console.log(data);
                 setSingleData(data)
             })
     }, []);
@@ -20,12 +20,21 @@ const Card = () => {
                      <div className="card bg-base-100 shadow-xl">
                         <figure><img className="h-[300px]" src={data.image} alt="Shoes" /></figure>
                         <div className="card-body">
-                            <h2 className="card-title">{data.
+                            <h2 className="card-title text-2xl">{data.
                                 estate_title
                             }</h2>
-                            <p>If a dog chews shoes whose shoes does he choose?</p>
+                            <p className="text-start text-gray-500">{data.description}</p>
+
+                            {/* Price section */}
+                            <div className="text-start mt-3">
+                            <h4><span className="font-bold mr-2">Price: </span>{data.price}</h4>
+                            <h4><span className="font-bold mr-2">Facilities: </span>{data.facilities[0]}, {data.facilities[1]}, {data.facilities[2]}, {data.facilities[3]}</h4>
+                            <h4><span className="font-bold mr-2">Area: </span>{data.area}</h4>
+
+                            </div>
+
                             <div className="card-actions justify-center">
-                                <button className="btn btn-primary text-white font-bold w-full">View Property</button>
+                               <Link to={`/details/${data.id}`}> <button className="btn btn-primary text-white font-bold w-full">View Property</button></Link>
                             </div>
                         </div>
                     </div>

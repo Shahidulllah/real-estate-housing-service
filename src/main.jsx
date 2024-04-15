@@ -12,6 +12,7 @@ import UserProfile from './Components/UserProfile/UserProfile';
 import Login from './Components/Login/Login';
 import Register from './Components/Login/Register';
 import ErrorPage from './Components/ErrorPage/ErrorPage';
+import Details from './Components/Card-Container/Details';
 
 
 const router = createBrowserRouter([
@@ -40,6 +41,11 @@ const router = createBrowserRouter([
       {
         path: '/register',
         element: <Register></Register>
+      },
+      {
+        path: '/details/:id',
+        element: <Details></Details>,
+        loader: ()=>fetch ('../data.json')
       }
     ]
   },

@@ -1,15 +1,35 @@
+import { createUserWithEmailAndPassword } from "firebase/auth";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import Auth from "../../Firebase/firebase.config";
 
 
 const Register = () => {
+  const handleRegister = e =>{
+    e.preventDefault();
+    const name = e.target.name.value;
+    const photoUrl = e.target.photoUrl.value;
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    const confirmPassword = e.target.confirmPassword.value;
+    console.log(name,email,password,confirmPassword,photoUrl,'form submited');
+
+    // Password Authentication
+    createUserWithEmailAndPassword(Auth, email, password)
+    .then(result =>{
+      console.log(result.user);
+    })
+    .catch(error =>{
+      console.error(error);
+    })
+  }
     return (
         <div>
       <div className="min-h-screen bg-base-200 mb-3 mt-7 flex flex-col justify-center items-center rounded-2xl w-full">
         <div className="w-full lg:w-6/12 p-5 lg:p-12">
           <div className="shadow-2xl p-7 bg-base-100 rounded-xl">
             <h1 className="text-center text-2xl font-bold">Register Your Account</h1>
-            <form>
+            <form onSubmit={handleRegister}>
               <div className="">
                 <label className="label ">
                  Name
@@ -20,7 +40,7 @@ const Register = () => {
                 <label className="label ">
                   Photo URL
                 </label>
-                <input type="text" placeholder="Upload Your Photo" className="input input-bordered w-full" />
+                <input type="text" name='photoUrl' placeholder="Upload Your Photo" className="input input-bordered w-full" />
               </div>
               <div className="form-control">
                 <label className="label ">
@@ -38,7 +58,7 @@ const Register = () => {
                 <label className="label">
                   <span >Confirm Password</span>
                 </label>
-                <input type="password" name='confirm-password' placeholder="Confirm Your Password" className="input input-bordered" required />
+                <input type="password" name='confirmPassword' placeholder="Confirm Your Password" className="input input-bordered" required />
               </div>
               <div className="form-control mt-6">
                 <button type="submit" className="btn btn-primary font-bold">Register</button>

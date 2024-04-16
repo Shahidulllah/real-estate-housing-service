@@ -114,7 +114,7 @@ const Register = () => {
                 error && <p className="mt-2 text-red-600  ">{error}</p>
               }
               {
-                success && <p className="mt-2  text-green-600 ">{success}</p>
+                success && <p className="mt-2  text-green-800 ">{success}</p>
               }
               <ToastContainer></ToastContainer>
 

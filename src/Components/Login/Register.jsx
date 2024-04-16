@@ -1,13 +1,14 @@
-import { createUserWithEmailAndPassword } from "firebase/auth";
 import { FaEye, FaEyeSlash, FaGithub, FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import Auth from "../../Firebase/firebase.config";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { AuthContext } from "../../Provider/AuthProvider";
 
 
 const Register = () => {
+  const {createUser} =useContext(AuthContext);
+
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
   const [showPassword, setShowPassword] = useState(false);
@@ -45,7 +46,7 @@ const Register = () => {
     }
 
     // Password Authentication
-    createUserWithEmailAndPassword(Auth, email, password)
+    createUser( email, password)
       .then(result => {
         console.log(result.user);
         setSuccess('Registration Successfull..!')
@@ -114,7 +115,7 @@ const Register = () => {
                 error && <p className="mt-2 text-red-600  ">{error}</p>
               }
               {
-                success && <p className="mt-2  text-green-800 ">{success}</p>
+                success && <p className="mt-2 text-green-600 ">{success}</p>
               }
               <ToastContainer></ToastContainer>
 

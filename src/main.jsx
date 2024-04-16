@@ -13,6 +13,7 @@ import Login from './Components/Login/Login';
 import Register from './Components/Login/Register';
 import ErrorPage from './Components/ErrorPage/ErrorPage';
 import Details from './Components/Card-Container/Details';
+import AuthProvider from './Provider/AuthProvider';
 
 
 const router = createBrowserRouter([
@@ -20,15 +21,15 @@ const router = createBrowserRouter([
     path: "/",
     element: <Root></Root>,
     errorElement: <ErrorPage></ErrorPage>,
-    children:[
+    children: [
       {
         path: '/',
         element: <Home></Home>,
-       
+
       },
       {
         path: '/update-profile',
-        element: <UpdateProfile></UpdateProfile>    
+        element: <UpdateProfile></UpdateProfile>
       },
       {
         path: '/user-profile',
@@ -45,7 +46,7 @@ const router = createBrowserRouter([
       {
         path: '/details/:id',
         element: <Details></Details>,
-        loader: ()=>fetch ('../data.json')
+        loader: () => fetch('../data.json')
       }
     ]
   },
@@ -54,6 +55,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </React.StrictMode>,
 )

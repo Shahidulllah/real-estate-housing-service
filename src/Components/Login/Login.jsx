@@ -1,12 +1,13 @@
-import { signInWithEmailAndPassword } from "firebase/auth";
 import { FaEye, FaEyeSlash, FaGithub, FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import Auth from "../../Firebase/firebase.config";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const Login = () => {
+  const {loginUser} = useContext(AuthContext);
+
   const [loginError, setLoginError] = useState('');
   const [loginSuccess, setLoginSuccess] = useState('');
   const [showPassword, setShowPassword] = useState(false);
@@ -20,7 +21,7 @@ const Login = () => {
     setLoginSuccess('');
 
     // Login authentication
-    signInWithEmailAndPassword(Auth, email, password)
+    loginUser(email, password)
       .then(result => {
         console.log(result.user);
         setLoginSuccess("Login Successfull..!")

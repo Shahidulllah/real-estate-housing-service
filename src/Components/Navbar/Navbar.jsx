@@ -1,11 +1,21 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 
 
 const Navbar = () => {
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLogOut = ()=>{
+        logOut()
+        .then(()=> console.log('User Logged out'))
+        .catch(error => console.error(error))
+    }
+
     const navlinks = <>
         <li><NavLink to='/'>Home</NavLink></li>
-        <li><NavLink to='/update-profile'>Update Profile</NavLink></li>
+        <li><NavLink to='/user-profile'>User Profile</NavLink></li>
     </>
 
 
@@ -29,7 +39,7 @@ const Navbar = () => {
                     {/* Profile */}
                     <div className="w-8/12 flex justify-end">
                         <div className="navbar-center hidden lg:flex  justify-center">
-                            <ul className="menu menu-horizontal px-1 font-bold">
+                            <ul className="menu menu-horizontal px-1 mr-20 flex gap-5 font-bold">
                                 {navlinks}
                             </ul>
                         </div>
@@ -39,10 +49,31 @@ const Navbar = () => {
                                     <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
                                 </div>
                             </div>
-                            <ul tabIndex={0} className=" z-[1] p-1 w-28 shadow menu menu-sm dropdown-content bg-base-100 rounded-box -ml-6 flex items-center">
-                                <li><Link to='/login'>Login</Link></li>
-                                <li><Link to='/'>Log Out</Link></li>
-                                <li><Link to='/user-profile'>User Profile</Link></li>
+
+                            {/* Dropdown */}
+                            <ul tabIndex={0} className=" z-[1] p-4 bg-slate-300 shadow menu menu-sm dropdown-content rounded-box -ml-44 lg:-ml-24 ">
+                                <div className="flex flex-col items-center justify-center">
+                                    <div className=" w-9 ">
+                                        <img className="rounded-full" alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                                    </div>
+                                    <div className="text-center font-serif">
+                                        <h1 className="font-semibold">md shahidul</h1>
+                                        {
+                                            user && <h2 className="text-sm">{user.email}</h2>
+                                        }
+
+                                    </div>
+                                </div>
+                                <div className="mt-5 border-y space-y-2">
+                                    {
+                                        user ?
+                                            <>
+                                                <li><Link to='/update-profile'>Update Profile</Link></li>
+                                                <li><button onClick={handleLogOut}>Log Out</button></li>
+                                            </> :
+                                            <li><Link to='/login'>Login</Link></li>
+                                    }
+                                </div>
                             </ul>
                         </div>
                     </div>

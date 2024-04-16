@@ -112,10 +112,10 @@ const Register = () => {
 
               {/* showing validation */}
               {
-                error && <p className="mt-2 text-red-600  ">{error}</p>
+                error && <p className="mt-2 text-red-600 font-serif ">{error}</p>
               }
               {
-                success && <p className="mt-2 text-green-600 ">{success}</p>
+                success && <p className="mt-2 text-green-600 font-serif text-xl">{success}</p>
               }
               <ToastContainer></ToastContainer>
 

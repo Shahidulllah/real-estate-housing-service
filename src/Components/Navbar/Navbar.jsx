@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
+import { CgProfile } from "react-icons/cg";
 
 
 
@@ -15,7 +16,11 @@ const Navbar = () => {
 
     const navlinks = <>
         <li><NavLink to='/'>Home</NavLink></li>
-        <li><NavLink to='/user-profile'>User Profile</NavLink></li>
+        {
+            user&&  
+            <li><NavLink to='/user-profile'>User Profile</NavLink></li>
+        }
+       
     </>
 
 
@@ -74,8 +79,9 @@ const Navbar = () => {
                                     </ul>
                                 </div>
                             </> :
-                                <div>
-                                    <li> <button className=" bg-slate-500 px-2 py-3 rounded-full text-white font-extralight"><Link to='/login'>Login</Link></button></li>
+                                <div className="flex  items-center gap-1"> 
+                                    <li><NavLink to='/login'> <button className="font-bold text-sm hover:bg-base-300 px-4 p-2 rounded-lg">Login</button></NavLink></li>
+                                    <CgProfile className="text-4xl"></CgProfile>
                                 </div>
 
                         }

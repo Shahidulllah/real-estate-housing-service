@@ -1,12 +1,13 @@
 import { FaEye, FaEyeSlash, FaGithub, FaGoogle } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 
 const Login = () => {
-  const {loginUser} = useContext(AuthContext);
+  const { loginUser, googleLogin } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const [loginError, setLoginError] = useState('');
   const [loginSuccess, setLoginSuccess] = useState('');
@@ -26,12 +27,26 @@ const Login = () => {
         console.log(result.user);
         setLoginSuccess("Login Successfull..!")
         toast('You have Logged in Successfully..!')
+        e.target.reset();
+        navigate('/');
       })
       .catch(error => {
         console.log(error.message);
         setLoginError('Email and Password is not correct..!');
       })
   }
+
+  // GoogleLogin
+  const handleGoogleLogin = ()=>{
+      googleLogin()
+      .then(result =>{
+        console.log(result.user);
+      })
+      .catch(error =>{
+        console.error(error)
+      })
+  }
+
   return (
     <div>
       <div className="min-h-screen bg-base-200 mb-3 mt-7 flex flex-col justify-center items-center rounded-2xl w-full">
@@ -64,10 +79,10 @@ const Login = () => {
               </div>
 
               {
-                loginError && <p className="mt-2 text-red-600  ">{loginError}</p>
+                loginError && <p className="mt-2 text-red-600 font-serif">{loginError}</p>
               }
               {
-                loginSuccess && <p className="mt-2  text-green-600 ">{loginSuccess}</p>
+                loginSuccess && <p className="mt-2 text-xl text-green-600 font-serif">{loginSuccess}</p>
               }
               <div className="form-control mt-6">
                 <button type="submit" className="btn btn-primary font-bold">Login</button>
@@ -82,7 +97,7 @@ const Login = () => {
                 {/* google, github */}
                 <div>
                   <h1 className="mb-4">Login with</h1>
-                  <button className="btn mr-7"><FaGoogle></FaGoogle> Google</button>
+                  <button onClick={handleGoogleLogin} className="btn mr-7"><FaGoogle></FaGoogle> Google</button>
                   <button className="btn"><FaGithub></FaGithub> GitHub</button>
                 </div>
               </div>

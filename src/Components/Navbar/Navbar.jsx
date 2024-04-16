@@ -7,10 +7,10 @@ import { AuthContext } from "../../Provider/AuthProvider";
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
 
-    const handleLogOut = ()=>{
+    const handleLogOut = () => {
         logOut()
-        .then(()=> console.log('User Logged out'))
-        .catch(error => console.error(error))
+            .then(() => console.log('User Logged out'))
+            .catch(error => console.error(error))
     }
 
     const navlinks = <>
@@ -36,6 +36,7 @@ const Navbar = () => {
                     </div>
 
 
+
                     {/* Profile */}
                     <div className="w-8/12 flex justify-end">
                         <div className="navbar-center hidden lg:flex  justify-center">
@@ -43,41 +44,42 @@ const Navbar = () => {
                                 {navlinks}
                             </ul>
                         </div>
-                        <div className="dropdown">
-                            <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-                                <div className=" rounded-full">
-                                    <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-                                </div>
-                            </div>
-
-                            {/* Dropdown */}
-                            <ul tabIndex={0} className=" z-[1] p-4 bg-slate-300 shadow menu menu-sm dropdown-content rounded-box -ml-44 lg:-ml-24 ">
-                                <div className="flex flex-col items-center justify-center">
-                                    <div className=" w-9 ">
-                                        <img className="rounded-full" alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                        {
+                            user ? <>
+                                <div className="dropdown">
+                                    <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                                        <div className=" rounded-full">
+                                            <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                                        </div>
                                     </div>
-                                    <div className="text-center font-serif">
-                                        <h1 className="font-semibold">md shahidul</h1>
-                                        {
-                                            user && <h2 className="text-sm">{user.email}</h2>
-                                        }
 
-                                    </div>
+                                    {/* Dropdown */}
+                                    <ul tabIndex={0} className=" z-[1] p-4 bg-slate-300 shadow menu menu-sm dropdown-content rounded-box -ml-44 lg:-ml-24 ">
+                                        <div className="flex flex-col items-center justify-center">
+                                            <div className=" w-9 ">
+                                                <img className="rounded-full" alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                                            </div>
+                                            <div className="text-center font-serif">
+                                                <h1 className="font-semibold">md shahidul</h1>
+                                                {
+                                                    user && <h2 className="text-sm">{user.email}</h2>
+                                                }
+
+                                            </div>
+                                        </div>
+                                        <div className="mt-5 border-y space-y-2">
+                                            <li><Link to='/update-profile'>Update Profile</Link></li>
+                                            <li><button onClick={handleLogOut}>Log Out</button></li>
+                                        </div>
+                                    </ul>
                                 </div>
-                                <div className="mt-5 border-y space-y-2">
-                                    {
-                                        user ?
-                                            <>
-                                                <li><Link to='/update-profile'>Update Profile</Link></li>
-                                                <li><button onClick={handleLogOut}>Log Out</button></li>
-                                            </> :
-                                            <li><Link to='/login'>Login</Link></li>
-                                    }
+                            </> :
+                                <div>
+                                    <li> <button className=" bg-slate-500 px-2 py-3 rounded-full text-white font-extralight"><Link to='/login'>Login</Link></button></li>
                                 </div>
-                            </ul>
-                        </div>
+
+                        }
                     </div>
-
                 </div>
             </div>
         </div>

@@ -14,13 +14,13 @@ const Details = () => {
     const detailsData = data.find(detailsData => detailsData.id == id);
     const { image, facilities, location, area, status, price, description, segment_name, estate_title } = detailsData;
     return (
-        <div className="flex justify-center mt-12 bg-gray-100 p-10 rounded-xl">
+        <div data-aos="zoom-in"  data-aos-duration="2000"  className="flex justify-center mt-12 bg-gray-100 p-10 rounded-xl">
             <div className=" lg:w-8/12">
                 {/* title */}
                 <div className="mb-8 md:flex lg:flex items-center justify-between">
                     {/* left */}
                     <div className="space-y-3 mb-12 ">
-                        <p className="font-serif text-4xl">{estate_title}</p>
+                        <p className="font-serif text-4xl animate__slow animate__animated animate__fadeInUp">{estate_title}</p>
                         <button className="px-6 py-1 bg-green-500 text-sm font-thin mr-1 text-white rounded">Status</button>
                         <button className="px-6 py-1 bg-slate-500 text-sm font-thin text-white rounded">{status}</button>
                         <p className="flex gap-1 items-center "><CiLocationOn className="text-2xl"></CiLocationOn> <span>{location}</span> </p>

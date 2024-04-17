@@ -1,4 +1,4 @@
-
+import 'animate.css';
 
 const Slider = () => {
     return (
@@ -8,8 +8,8 @@ const Slider = () => {
 
                     {/* title */}
                     <div className="bg-black/40 absolute w-full h-full flex flex-col justify-center items-center text-white P-8 space-y-5">
-                        <h1 className="text-3xl lg:text-6xl font-serif font-bold text-center ">Buy and Sell Amazing Places</h1>
-                        <h1 className="lg:text-3xl text-center ">EQUESTRIAL/HISTORIC/WATERFRONT</h1>
+                        <h1 className="text-3xl lg:text-6xl font-serif font-bold text-center animate__animated animate__rubberBand animate__slow">Buy and Sell Amazing Places</h1>
+                        <h1 className="lg:text-3xl text-center animate__animated animate__fadeInUp animate__slow">EQUESTRIAL/HISTORIC/WATERFRONT</h1>
                     </div>
                     <img src="https://i.ibb.co/pQhfR93/banner-1.jpg" className="w-full" />
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
@@ -19,8 +19,8 @@ const Slider = () => {
                 </div>
                 <div id="slide2" className="carousel-item relative w-full">
                     <div className="bg-black/40 absolute w-full h-full flex flex-col justify-center items-center text-white P-8 space-y-5">
-                        <h1 className="text-3xl lg:text-6xl font-serif font-bold text-center ">Explore Unique And Lifestyles</h1>
-                        <h1 className="lg:text-3xl text-center ">EQUESTRIAL/HISTORIC/WATERFRONT</h1>
+                        <h1 className="animate__animated animate__fadeInDown animate__slow text-3xl lg:text-6xl font-serif font-bold text-center ">Explore Unique And Lifestyles</h1>
+                        <h1 className="lg:text-3xl text-center animate__slow animate__animated animate__fadeInUp ">EQUESTRIAL/HISTORIC/WATERFRONT</h1>
                     </div>
                     <img src="https://i.ibb.co/2nY0Bz7/banner-2.jpg" className="w-full" />
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
@@ -30,8 +30,8 @@ const Slider = () => {
                 </div>
                 <div id="slide3" className="carousel-item relative w-full">
                     <div className="bg-black/40 absolute w-full h-full flex flex-col justify-center items-center text-white P-8 space-y-5">
-                        <h1 className="text-3xl lg:text-6xl font-serif font-bold text-center ">Discover Luxury Homes</h1>
-                        <h1 className="lg:text-3xl text-center ">EQUESTRIAL/HISTORIC/WATERFRONT</h1>
+                        <h1 className="text-3xl lg:text-6xl font-serif font-bold text-center animate__slow animate__animated animate__fadeInUp ">Discover Luxury Homes</h1>
+                        <h1 className="lg:text-3xl text-center animate__slow animate__animated animate__fadeInUp ">EQUESTRIAL/HISTORIC/WATERFRONT</h1>
                     </div>
                     <img src="https://i.ibb.co/hgtNfTc/banner-3.jpg" className="w-full" />
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
@@ -41,8 +41,8 @@ const Slider = () => {
                 </div>
                 <div id="slide4" className="carousel-item relative w-full">
                     <div className="bg-black/40 absolute w-full h-full flex flex-col justify-center items-center text-white P-8 space-y-4">
-                        <h1 className="text-3xl lg:text-6xl font-serif font-bold text-center ">Buy and Sell Amazing Places</h1>
-                        <h1 className="lg:text-3xl text-center ">EQUESTRIAL/HISTORIC/WATERFRONT</h1>
+                        <h1 className="text-3xl lg:text-6xl font-serif font-bold text-center animate__slow animate__animated animate__fadeInUp">Buy and Sell Amazing Places</h1>
+                        <h1 className="lg:text-3xl text-center animate__slow animate__animated animate__fadeInUp">EQUESTRIAL/HISTORIC/WATERFRONT</h1>
                     </div>
                     <img src="https://i.ibb.co/Gp108bD/banner-4.jpg" className="w-full" />
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">

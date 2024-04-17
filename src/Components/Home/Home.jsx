@@ -1,15 +1,13 @@
 import CardContainer from "../Card-Container/CardContainer";
 import Slider from "../Slider/Slider";
-import Footer from "./Footer";
 
 
 
 const Home = () => {
     return (
-        <div>
+        <div data-aos="ease-in"  data-aos-duration="2000" >
             <Slider></Slider>
             <CardContainer></CardContainer>
-            <Footer></Footer>
         </div>
     );
 };

@@ -37,7 +37,7 @@ const Navbar = () => {
                                 {navlinks}
                             </ul>
                         </div>
-                        <button className="text-xl lg:text-3xl font-bold bg-white border-none ">Housing  Corner</button>
+                       <Link to='/'> <button className="text-xl lg:text-3xl font-bold bg-white border-none "><span className="text-5xl font-extrabold text-purple-600">H</span>ousing.<span>c</span>o</button></Link>
                     </div>
 
                     {/* Profile */}

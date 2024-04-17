@@ -13,11 +13,11 @@ const Card = () => {
     }, []);
 
     return (
-        <div  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 mt-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 mt-10">
             {
                 singleData.map(data =>
-                   <div key={data.id} className="flex flex-grow">
-                     <div className="card bg-base-100 shadow-xl">
+                   <div data-aos="fade-up"  data-aos-duration="2000" key={data.id} className="flex flex-grow">
+                     <div  className="card bg-base-100 shadow-xl">
                         <figure><img className="h-[300px]" src={data.image} alt="Shoes" /></figure>
                         <div className="card-body">
                             <h2 className="card-title text-2xl">{data.

@@ -6,7 +6,7 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 
 const Login = () => {
-  const { loginUser, googleLogin } = useContext(AuthContext);
+  const { loginUser, googleLogin, gitHubLogin } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const [loginError, setLoginError] = useState('');
@@ -39,6 +39,17 @@ const Login = () => {
   // GoogleLogin
   const handleGoogleLogin = ()=>{
       googleLogin()
+      .then(result =>{
+        console.log(result.user);
+      })
+      .catch(error =>{
+        console.error(error)
+      })
+  }
+
+  // GitHubLogin
+  const handleGitHubLogin = ()=>{
+    gitHubLogin()
       .then(result =>{
         console.log(result.user);
       })
@@ -98,7 +109,7 @@ const Login = () => {
                 <div>
                   <h1 className="mb-4">Login with</h1>
                   <button onClick={handleGoogleLogin} className="btn mr-7"><FaGoogle></FaGoogle> Google</button>
-                  <button className="btn"><FaGithub></FaGithub> GitHub</button>
+                  <button onClick={handleGitHubLogin} className="btn"><FaGithub></FaGithub> GitHub</button>
                 </div>
               </div>
               <p className="mt-7 text-center">Not a member? Please <Link to='/register' className="text-blue-600 font-bold">Register.</Link></p>

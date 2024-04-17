@@ -7,7 +7,7 @@ import { AuthContext } from "../../Provider/AuthProvider";
 
 
 const Register = () => {
-  const { createUser, updateUserProfile, googleLogin } = useContext(AuthContext);
+  const { createUser, updateUserProfile, googleLogin, gitHubLogin } = useContext(AuthContext);
 
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
@@ -65,6 +65,17 @@ const Register = () => {
   // google login
   const handleGoogleLogin = ()=>{
     googleLogin()
+    .then(result =>{
+      console.log(result.user);
+    })
+    .catch(error =>{
+      console.error(error)
+    })
+}
+
+// GitHubLogin
+const handleGitHubLogin = ()=>{
+  gitHubLogin()
     .then(result =>{
       console.log(result.user);
     })
@@ -147,10 +158,9 @@ const Register = () => {
                 <p>Or,</p>
                 <hr />
                 {/* google, github */}
-                <div>
-                  <h1 className="mb-4">Login with</h1>
-                  <button onClick={handleGoogleLogin} className="btn mr-7"><FaGoogle></FaGoogle> Google</button>
-                  <button className="btn"><FaGithub></FaGithub> GitHub</button>
+                <div className="mt-4">
+                  <button onClick={handleGoogleLogin} className="btn mr-7"><FaGoogle></FaGoogle>Login With Google</button>
+                  <button onClick={handleGitHubLogin} className="btn"><FaGithub></FaGithub>Login With GitHub</button>
                 </div>
               </div>
             </form>

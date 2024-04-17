@@ -40,8 +40,6 @@ const Navbar = () => {
                         <button className="text-xl lg:text-3xl font-bold bg-white border-none ">Housing  Corner</button>
                     </div>
 
-
-
                     {/* Profile */}
                     <div className="w-8/12 flex justify-end">
                         <div className="navbar-center hidden lg:flex  justify-center">
@@ -54,7 +52,7 @@ const Navbar = () => {
                                 <div className="dropdown">
                                     <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                                         <div className=" rounded-full">
-                                            <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                                            <img src={user?.photoURL || "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png"} />
                                         </div>
                                     </div>
 
@@ -62,10 +60,10 @@ const Navbar = () => {
                                     <ul tabIndex={0} className=" z-[1] p-4 bg-slate-300 shadow menu menu-sm dropdown-content rounded-box -ml-44 lg:-ml-24 ">
                                         <div className="flex flex-col items-center justify-center">
                                             <div className=" w-9 ">
-                                                <img className="rounded-full" alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                                                <img className="rounded-full" src={user?.photoURL || "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png"} />
                                             </div>
                                             <div className="text-center font-serif">
-                                                <h1 className="font-semibold">md shahidul</h1>
+                                                <h1 className="font-semibold">{user.displayName}</h1>
                                                 {
                                                     user && <h2 className="text-sm">{user.email}</h2>
                                                 }

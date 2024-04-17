@@ -7,7 +7,7 @@ import { AuthContext } from "../../Provider/AuthProvider";
 
 
 const Register = () => {
-  const {createUser} =useContext(AuthContext);
+  const { createUser, updateUserProfile, googleLogin } = useContext(AuthContext);
 
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
@@ -46,17 +46,32 @@ const Register = () => {
     }
 
     // Password Authentication
-    createUser( email, password)
+    createUser(email, password)
       .then(result => {
         console.log(result.user);
         setSuccess('Registration Successfull..!')
         toast('You have Succesfully Registered..!')
+
+        updateUserProfile(name, photoUrl)
+          .then(() => console.log('profile updated'))
+          .catch()
       })
       .catch(error => {
         console.error(error);
         setError(error.message);
       })
   }
+
+  // google login
+  const handleGoogleLogin = ()=>{
+    googleLogin()
+    .then(result =>{
+      console.log(result.user);
+    })
+    .catch(error =>{
+      console.error(error)
+    })
+}
   return (
     <div>
       <div className="min-h-screen bg-base-200 mb-3 mt-7 flex flex-col justify-center items-center rounded-2xl w-full">
@@ -97,7 +112,7 @@ const Register = () => {
                 </div>
               </div>
 
-                {/* confirm password */}
+              {/* confirm password */}
               <div className="form-control">
                 <label className="label">
                   <span >Confirm Password</span>
@@ -125,18 +140,19 @@ const Register = () => {
               </div>
 
               {/* Other Option to log in */}
+              <p className="mt-7 text-center">Already member? Please <Link to='/login' className="text-blue-600 font-bold">Login.</Link></p>
               <div className="mt-8 text-center">
+
                 <hr />
                 <p>Or,</p>
                 <hr />
                 {/* google, github */}
                 <div>
-                  <h1 className="mb-4">Register with</h1>
-                  <button className="btn mr-7"><FaGoogle></FaGoogle> Google</button>
+                  <h1 className="mb-4">Login with</h1>
+                  <button onClick={handleGoogleLogin} className="btn mr-7"><FaGoogle></FaGoogle> Google</button>
                   <button className="btn"><FaGithub></FaGithub> GitHub</button>
                 </div>
               </div>
-              <p className="mt-7 text-center">Already member? Please <Link to='/login' className="text-blue-600 font-bold">Login.</Link></p>
             </form>
           </div>
         </div>

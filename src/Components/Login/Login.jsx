@@ -1,5 +1,5 @@
 import { FaEye, FaEyeSlash, FaGithub, FaGoogle } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useContext, useState } from "react";
@@ -8,6 +8,8 @@ import { AuthContext } from "../../Provider/AuthProvider";
 const Login = () => {
   const { loginUser, googleLogin, gitHubLogin } = useContext(AuthContext);
   const navigate = useNavigate();
+  const location = useLocation();
+  console.log("from login ", location)
 
   const [loginError, setLoginError] = useState('');
   const [loginSuccess, setLoginSuccess] = useState('');
@@ -28,7 +30,7 @@ const Login = () => {
         setLoginSuccess("Login Successfull..!")
         toast('You have Logged in Successfully..!')
         e.target.reset();
-        navigate('/');
+        navigate(location?.state ? location.state :'/');
       })
       .catch(error => {
         console.log(error.message);
@@ -41,6 +43,7 @@ const Login = () => {
       googleLogin()
       .then(result =>{
         console.log(result.user);
+        navigate(location?.state ? location.state :'/');
       })
       .catch(error =>{
         console.error(error)
@@ -52,6 +55,7 @@ const Login = () => {
     gitHubLogin()
       .then(result =>{
         console.log(result.user);
+        navigate(location?.state ? location.state :'/');
       })
       .catch(error =>{
         console.error(error)

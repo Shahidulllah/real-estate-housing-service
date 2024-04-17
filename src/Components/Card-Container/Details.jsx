@@ -12,7 +12,6 @@ const Details = () => {
     const data = useLoaderData();
     const { id } = useParams();
     const detailsData = data.find(detailsData => detailsData.id == id);
-    console.log(detailsData);
     const { image, facilities, location, area, status, price, description, segment_name, estate_title } = detailsData;
     return (
         <div className="flex justify-center mt-12 bg-gray-100 p-10 rounded-xl">

@@ -7,7 +7,7 @@ const Slider = () => {
                 <div id="slide1" className="carousel-item relative w-full  ">
 
                     {/* title */}
-                    <div className="bg-black/50 absolute w-full h-full flex flex-col justify-center items-center text-white P-8 space-y-5">
+                    <div className="bg-black/40 absolute w-full h-full flex flex-col justify-center items-center text-white P-8 space-y-5">
                         <h1 className="text-3xl lg:text-6xl font-serif font-bold text-center ">Buy and Sell Amazing Places</h1>
                         <h1 className="lg:text-3xl text-center ">EQUESTRIAL/HISTORIC/WATERFRONT</h1>
                     </div>
@@ -18,7 +18,7 @@ const Slider = () => {
                     </div>
                 </div>
                 <div id="slide2" className="carousel-item relative w-full">
-                    <div className="bg-black/50 absolute w-full h-full flex flex-col justify-center items-center text-white P-8 space-y-5">
+                    <div className="bg-black/40 absolute w-full h-full flex flex-col justify-center items-center text-white P-8 space-y-5">
                         <h1 className="text-3xl lg:text-6xl font-serif font-bold text-center ">Explore Unique And Lifestyles</h1>
                         <h1 className="lg:text-3xl text-center ">EQUESTRIAL/HISTORIC/WATERFRONT</h1>
                     </div>
@@ -29,7 +29,7 @@ const Slider = () => {
                     </div>
                 </div>
                 <div id="slide3" className="carousel-item relative w-full">
-                    <div className="bg-black/50 absolute w-full h-full flex flex-col justify-center items-center text-white P-8 space-y-5">
+                    <div className="bg-black/40 absolute w-full h-full flex flex-col justify-center items-center text-white P-8 space-y-5">
                         <h1 className="text-3xl lg:text-6xl font-serif font-bold text-center ">Discover Luxury Homes</h1>
                         <h1 className="lg:text-3xl text-center ">EQUESTRIAL/HISTORIC/WATERFRONT</h1>
                     </div>
@@ -40,7 +40,7 @@ const Slider = () => {
                     </div>
                 </div>
                 <div id="slide4" className="carousel-item relative w-full">
-                    <div className="bg-black/50 absolute w-full h-full flex flex-col justify-center items-center text-white P-8 space-y-4">
+                    <div className="bg-black/40 absolute w-full h-full flex flex-col justify-center items-center text-white P-8 space-y-4">
                         <h1 className="text-3xl lg:text-6xl font-serif font-bold text-center ">Buy and Sell Amazing Places</h1>
                         <h1 className="lg:text-3xl text-center ">EQUESTRIAL/HISTORIC/WATERFRONT</h1>
                     </div>

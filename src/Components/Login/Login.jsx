@@ -9,7 +9,6 @@ const Login = () => {
   const { loginUser, googleLogin, gitHubLogin } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
-  console.log("from login ", location)
 
   const [loginError, setLoginError] = useState('');
   const [loginSuccess, setLoginSuccess] = useState('');

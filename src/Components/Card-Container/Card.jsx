@@ -33,8 +33,8 @@ const Card = () => {
 
                             </div>
 
-                            <div className="card-actions justify-center">
-                               <Link to={`/details/${data.id}`}> <button className="btn btn-primary text-white font-bold w-full">View Property</button></Link>
+                            <div className="card-actions justify-center mt-7">
+                               <Link className="w-full" to={`/details/${data.id}`}> <button className="btn btn-success text-white font-bold w-full">View Property</button></Link>
                             </div>
                         </div>
                     </div>
